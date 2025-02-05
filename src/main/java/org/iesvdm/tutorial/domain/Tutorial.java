@@ -16,7 +16,10 @@ public class Tutorial {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     private long id;
+
+    @Column(unique = true, length = 30, nullable = false)
     private String titulo;
+    //ES bidireccional
     @OneToMany( mappedBy = "tutorial", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private Set<Comentario> comentarios;
 }
