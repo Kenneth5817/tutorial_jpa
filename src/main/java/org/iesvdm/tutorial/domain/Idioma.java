@@ -29,6 +29,7 @@ public class Idioma {
 
     private String nombre;
 
+
     @OneToMany(mappedBy = "idioma", fetch = FetchType.EAGER)
     //@JsonIgnore
     //@JsonManagedReference
