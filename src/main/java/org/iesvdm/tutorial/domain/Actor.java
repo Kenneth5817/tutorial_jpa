@@ -1,32 +1,28 @@
 package org.iesvdm.tutorial.domain;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 import java.util.Set;
 
-@Data
-@Builder
+@Entity
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-
-@Entity
-public class Categoria {
+public class Actor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
-    private Long id;
-
-    @Column(length = 30, nullable = false)
+    private long id_Actor;
     private String nombre;
-
+    private String apellidos;
     private LocalDateTime ultima_actualizacion;
-    //@ManyToMany(mappedBy = "categorias")
-    //private Set<Pelicula>peliculas;
-
-    @OneToMany(mappedBy = "categoria")
-    private Set<PeliculaCategoria> peliculaCategorias;
+    @ManyToMany
+    private Set<Pelicula> peliculas;
 }

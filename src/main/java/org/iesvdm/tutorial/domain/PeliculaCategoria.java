@@ -21,4 +21,7 @@ public class PeliculaCategoria {
 
     @ManyToOne
     private Pelicula pelicula;
+
+
+    //2 one to many
 }
