@@ -39,21 +39,13 @@ public class TutorialComentarioTests {
         transactionTemplate = new TransactionTemplate(transactionManager);
     }
 
-
-    @Test
-    @Order(0)
-    void pruebaFetchLazyEager(){
-        Tutorial tutorial= tutorialRepository.save(Tutorial.builder().titulo("Titulo 1").build());
-        Tutorial tutorial2= tutorialRepository.findById(tutorial.getId()).orElse(null);
-    }
-
     @Test
     @Order(0)
     void pruebaFetchLazyEager() {
 
         Tutorial tutorial = tutorialRepository.save(Tutorial.builder()
-                                                        .titulo("Título 1")
-                                                        .build());
+                .titulo("Título 1")
+                .build());
 
         Tutorial tutorial2 = tutorialRepository.findById(tutorial.getId()).orElse(null);
 

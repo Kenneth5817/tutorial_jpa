@@ -9,6 +9,7 @@ import lombok.*;
 @Builder
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 
+@Entity
 public class Socio {
 
     @Id
@@ -16,15 +17,16 @@ public class Socio {
     @EqualsAndHashCode.Include
     private Long id;
 
-    @Column(length=9,unique=true)
+    @Column(length = 9, unique = true)
     private String nif;
 
-    @Column(length=30)
+    @Column(length = 30)
     private String nombre;
 
-    @Column(length=120)
+    @Column(length = 120)
     private String apellidos;
 
     @OneToOne(mappedBy = "socio")
     private Tarjeta tarjeta;
+
 }

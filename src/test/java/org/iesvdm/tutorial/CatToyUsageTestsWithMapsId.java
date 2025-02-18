@@ -58,18 +58,18 @@ public class CatToyUsageTestsWithMapsId {
         toyRepository.save(toyMuneco);
 
         CatToyUsageWithMapsId catToyUsage1 = new CatToyUsageWithMapsId(new CatToyUsageWithMapsId.Pk(catMessi.getId(), toyPelota.getId()),
-                                                                        catMessi,
-                                                                        toyPelota,
-                                                            "usado");
+                catMessi,
+                toyPelota,
+                "usado");
         catMessi.getCatToyUsages().add(catToyUsage1);
         toyPelota.getCatToyUsages().add(catToyUsage1);
 
         catToyUsageRepository.save(catToyUsage1);
 
         CatToyUsageWithMapsId catToyUsage2 = new CatToyUsageWithMapsId(new CatToyUsageWithMapsId.Pk(catRonaldo.getId(), toyMuneco.getId()),
-                                                                        catRonaldo,
-                                                                        toyMuneco,
-                                                            "más usado");
+                catRonaldo,
+                toyMuneco,
+                "más usado");
         catRonaldo.getCatToyUsages().add(catToyUsage2);
         toyMuneco.getCatToyUsages().add(catToyUsage2);
 

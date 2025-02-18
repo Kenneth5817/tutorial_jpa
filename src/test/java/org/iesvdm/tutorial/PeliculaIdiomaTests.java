@@ -60,8 +60,8 @@ public class PeliculaIdiomaTests {
         peliculaRepository.save(pelicula2);
 
         Idioma idioma2 = Idioma.builder()
-                        .nombre("inglés")
-                        .build();
+                .nombre("inglés")
+                .build();
         idiomaRepository.save(idioma2);
 
         Pelicula pelicula3 = Pelicula.builder()
@@ -112,7 +112,7 @@ public class PeliculaIdiomaTests {
 
         idioma2.getPeliculas().forEach(pelicula -> { pelicula.setIdioma(null);
             peliculaRepository.save(pelicula);
-                                                    //peliculaRepository.delete(pelicula);
+            //peliculaRepository.delete(pelicula);
         });
         //idiomaRepository.delete(idioma2);
 
@@ -125,11 +125,11 @@ public class PeliculaIdiomaTests {
 
         Idioma idioma1 = idiomaRepository.findById(1L).orElse(null);
 
-            idioma1.getPeliculas().forEach(pelicula -> {//pelicula.setIdioma(null);
-                peliculaRepository.delete(pelicula);
-            });
+        idioma1.getPeliculas().forEach(pelicula -> {//pelicula.setIdioma(null);
+            peliculaRepository.delete(pelicula);
+        });
 
-            //ESTE 2o FIND HAY QUE HACERLO
+        //ESTE 2o FIND HAY QUE HACERLO
         //idioma1 = idiomaRepository.findById(1L).orElse(null);
         idiomaRepository.delete(idioma1);
 

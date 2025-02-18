@@ -78,7 +78,7 @@ public class PeliculaCategoriaTests {
         peliculaRepository.save(pelicula);
 
         PeliculaCategoria peliculaCategoria = new PeliculaCategoria(null,
-                                            categoria, pelicula);
+                categoria, pelicula);
         peliculaCategoriaRepository.save(peliculaCategoria);
 
     }
