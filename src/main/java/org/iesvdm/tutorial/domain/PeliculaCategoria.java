@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import lombok.*;
 
 @Data
-@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
@@ -22,6 +21,4 @@ public class PeliculaCategoria {
     @ManyToOne
     private Pelicula pelicula;
 
-
-    //2 one to many
 }

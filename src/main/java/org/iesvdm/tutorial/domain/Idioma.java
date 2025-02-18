@@ -9,7 +9,6 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import org.iesvdm.tutorial.serializer.PeliculaSerializer;
 
-import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -29,20 +28,10 @@ public class Idioma {
     private long id;
 
     private String nombre;
-    private LocalDateTime ultima_actualizacion;
-
 
     @OneToMany(mappedBy = "idioma", fetch = FetchType.EAGER)
     //@JsonIgnore
     //@JsonManagedReference
     private Set<Pelicula> peliculas = new HashSet<>();
 
-
-    @OneToMany(mappedBy = "idioma")
-    //@JsonIgnore
-    //@JsonManagedReference
-    private Set<Pelicula> peliculasIdiomaOriginal = new HashSet<>();
-
-    public <E> Idioma(int i, String inglés, HashSet<E> es) {
-    }
 }

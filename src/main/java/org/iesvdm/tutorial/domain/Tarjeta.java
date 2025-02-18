@@ -5,7 +5,6 @@ import lombok.*;
 
 import java.time.LocalDate;
 
-@Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -22,7 +21,6 @@ public class Tarjeta {
     private LocalDate fechaCaducidad;
 
     @OneToOne
-    @JoinColumn(name = "socio___id", referencedColumnName = "id")
     private Socio socio;
 
 }
